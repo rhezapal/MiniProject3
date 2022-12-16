@@ -42,13 +42,43 @@ Untuk Kategori Middle Transaction, High Transaction, dan Very High Transaction (
 - Income dan Conversion Rate diisi dengan nilai Modus.
 ### Data Duplicated : 
 - tidak ada
+### Handle Outlier :
+- Khusus untuk data numerikal
+- Jumlah baris sebelum memfilter outlier: 2240
+- Jumlah baris setelah memfilter outlier: 1907
 ### Label Encoding :
 - Label Encoding : Education
 - One Hot Encoding : Cat_Usia (Kategori Usia),Marital_Status, Cat_Income (Kategori Income), Cat_Transaction (Kategori Transaksi
-
-### Dropping Value : ada beberapa fitur yang didrop
+### Dropping Value : 
+- ada beberapa fitur yang didrop
+- 'Unnamed: 0','ID','Education','Marital_Status','Kidhome','Teenhome','Dt_Customer','Recency',
+- 'MntCoke','MntFruits','MntMeatProducts','MntFishProducts','MntSweetProducts','MntGoldProds',
+- 'NumDealsPurchases','NumWebPurchases','NumCatalogPurchases','NumStorePurchases','NumWebVisitsMonth',
+- 'AcceptedCmp3','AcceptedCmp4','AcceptedCmp5','AcceptedCmp1','AcceptedCmp2','Complain','Z_CostContact','Z_Revenue','Response',
+- 'Cat_Usia','Cat_Transaction','Cat_Income'
 ### Log Tranformasion :
+- Fitur Year Birth, Income, Umur, dan Transaction_tot perlu dilakukan log transformasi
 ### Standarisasi : 
+- perlu dilakukan
+
+## Data Modelling
+- Visualisasi Elbow Method menggunakan K-Means Clustering
+- Evaluasi KMeans
+
+## Kesimpulan :
+- Usia : dari data diatas, customer kebanyakan diusia dewasa akhir sampai lansia, sehingga tidak ada perbedaan yang bermakna.
+Dari clustering, perbedaan yang jelas adalah pembagian segmentasi jumlah nominal transaksi.
+
+- Rekomendasi Bisnis :
+- Untuk Cluster 2 : Jumlah transaksi minimal dibandingkan dua jenis cluster lainnya,  dapat dipertimbangkan untuk menambah jenis promo, sehingga meningkatkan jumlah transaksi, perlu adanya peningkatan kunjungan ke Website. Promo kunjungan perlu dipertimbangkan ada. Perlu adanya Program Loyalty dengan indikator jumlah kunjungan, semakin sering customer datang, akan mendapatkan voucher diskon (contoh)
+- Untuk Cluster 1 dan 3, Jumlah kunjungan sudah cukup tinggi, dan nominal transaksi juga tinggi, perlu adanya maintenance agar, tidak terjadi churn. Bisa menggunakan voucher tambahan diskon untuk minimal pembelanjaan tertentu. 
+
+Noted : Jupyter Notebook dan Slide Presentasi, berbeda, dikarenakan adanya penambahan  handle outlier dan log transformation sebelum encoding pada jupyter notebook
+
+
+
+
+
 
 
 
